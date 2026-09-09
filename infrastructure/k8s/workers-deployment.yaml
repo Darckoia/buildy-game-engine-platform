@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buildy-workers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: buildy-workers
+  template:
+    metadata:
+      labels:
+        app: buildy-workers
+    spec:
+      containers:
+        - name: worker-generation
+          image: ghcr.io/darckoia/buildy-worker-generation:latest
+        - name: worker-build
+          image: ghcr.io/darckoia/buildy-worker-build:latest
