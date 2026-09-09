@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buildy-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: buildy-api
+  template:
+    metadata:
+      labels:
+        app: buildy-api
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/darckoia/buildy-api:latest
+          ports:
+            - containerPort: 3000

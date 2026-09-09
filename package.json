@@ -1,0 +1,37 @@
+{
+  "name": "buildy-game-engine-platform",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.12.2",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @buildy/api --filter @buildy/web --filter @buildy/worker-generation --filter @buildy/worker-build --filter @buildy/admin run dev",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
+    "db:migrate": "pnpm --filter @buildy/db run migrate",
+    "db:seed": "pnpm --filter @buildy/db run seed",
+    "setup": "bash ./setup.sh"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.14",
+    "@types/node": "22.10.2",
+    "@types/react": "18.3.15",
+    "@types/react-dom": "18.3.5",
+    "@typescript-eslint/eslint-plugin": "8.18.1",
+    "@typescript-eslint/parser": "8.18.1",
+    "eslint": "8.57.1",
+    "jest": "29.7.0",
+    "prettier": "3.4.2",
+    "ts-jest": "29.2.5",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "supertest": "7.0.0",
+    "@types/supertest": "6.0.2",
+    "@types/jsonwebtoken": "9.0.7"
+  }
+}
